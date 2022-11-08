@@ -47,7 +47,7 @@ body{
 
 .header .logo img {
   padding: 30px 0;
-  width: 100%;
+  width: 50%;
 }
 
 .header h2 {
@@ -78,6 +78,7 @@ body{
 }
 
 .bttn.primary{
+  margin-top: 10px;
   display: inline-block;
   width: max-content;
   background: #21A69A;
