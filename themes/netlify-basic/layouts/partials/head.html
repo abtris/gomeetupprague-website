@@ -1,8 +1,17 @@
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSSWY872LM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YSSWY872LM');
+  </script>  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/css/demo-styling.css">
   {{ $title := print .Site.Title " | " .Title }}
   {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
-  <title>{{ $title }}</title>
+  <title>{{ $title }}</title>  
 </head>
