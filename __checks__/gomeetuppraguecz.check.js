@@ -11,14 +11,15 @@ async function run () {
 	const browser = await chromium.launch()
 	const page = await browser.newPage()
 
+	const myURL = process.env.ENVIRONMENT_URL || 'https://www.gomeetupprague.cz/'
 	// We visit the page. This waits for the 'load' event by default.
-  const response = await page.goto('https://www.gomeetupprague.cz/')
+  const response = await page.goto(myURL)
 
 	// If the page doesn't return a successful response code, we fail the check.
 	if (response.status() > 399) {
 		throw new Error(`Failed with response code ${response.status()}`)
 	}
-
+	await expect(page).toHaveTitle(/Go Meetup Prague/);
 	// We snap a screenshot.
 	await page.screenshot({ path: 'screenshot.jpg' })
 
