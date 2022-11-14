@@ -20,7 +20,7 @@ type Payload struct {
 	DeployURL    string `json:"deploy_ssl_url"`
 	ReviewURL    string `json:"review_url"`
 	Commit       string `json:"commit_ref"`
-	DeploymentId string `json:"deploy_id"`
+	DeploymentId string `json:"build_id"`
 }
 
 func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
