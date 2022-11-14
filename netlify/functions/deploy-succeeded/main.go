@@ -15,6 +15,7 @@ type RequestBody struct {
 
 type Payload struct {
 	Context   string `json:"context"`
+	DeployURL string `json:"deploy_url"`
 	ReviewURL string `json:"review_url"`
 }
 
@@ -25,6 +26,7 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 
 	if requestBody.Payload.Context == "deploy-preview" {
 		fmt.Println("previewURL: " + requestBody.Payload.ReviewURL)
+		fmt.Println("deployURL: " + requestBody.Payload.DeployURL)
 	} else {
 		fmt.Println("context " + requestBody.Payload.Context + " detected, skipping")
 	}
