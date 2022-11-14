@@ -17,7 +17,7 @@ type RequestBody struct {
 
 type Payload struct {
 	Context   string `json:"context"`
-	DeployURL string `json:"deploy_url"`
+	DeployURL string `json:"deploy_ssl_url"`
 	ReviewURL string `json:"review_url"`
 	Commit    string `json:"commit_ref"`
 }
@@ -30,6 +30,9 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	if requestBody.Payload.Context == "deploy-preview" {
 		deployURL := requestBody.Payload.DeployURL
 		sha := requestBody.Payload.Commit
+		if sha == "" {
+			sha = "not-available"
+		}
 		trigger := os.Getenv("TRIGGER_URL")
 		requestURL := fmt.Sprintf("%s?sha=%s&environmentUrl=%s&environmentName=%s", sha, trigger, deployURL, "deploy-preview")
 		fmt.Println(requestURL)
