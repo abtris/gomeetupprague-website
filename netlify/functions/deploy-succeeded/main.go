@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"os"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -25,8 +27,17 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	json.Unmarshal([]byte(request.Body), &requestBody)
 
 	if requestBody.Payload.Context == "deploy-preview" {
-		fmt.Println("previewURL: " + requestBody.Payload.ReviewURL)
-		fmt.Println("deployURL: " + requestBody.Payload.DeployURL)
+		deployURL := requestBody.Payload.DeployURL
+		trigger := os.Getenv("TRIGGER_URL")
+		requestURL := fmt.Sprintf("%s?environmentUrl=%s&environmentName=%s", trigger, deployURL, "deploy-preview")
+		fmt.Println(requestURL)
+		res, err := http.Get(requestURL)
+		if err != nil {
+			fmt.Printf("error making http request: %s\n", err)
+			os.Exit(1)
+		}
+		fmt.Printf("client: got response!\n")
+		fmt.Printf("client: status code: %d\n", res.StatusCode)
 	} else {
 		fmt.Println("context " + requestBody.Payload.Context + " detected, skipping")
 	}
