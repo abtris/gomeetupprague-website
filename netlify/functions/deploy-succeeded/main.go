@@ -30,11 +30,8 @@ func handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	if requestBody.Payload.Context == "deploy-preview" {
 		deployURL := requestBody.Payload.DeployURL
 		sha := requestBody.Payload.Commit
-		if sha == "" {
-			sha = "not-available"
-		}
 		trigger := os.Getenv("TRIGGER_URL")
-		requestURL := fmt.Sprintf("%s?sha=%s&environmentUrl=%s&environmentName=%s", sha, trigger, deployURL, "deploy-preview")
+		requestURL := fmt.Sprintf("%s?sha=%s&environmentUrl=%s&environmentName=%s", trigger, sha, deployURL, "deploy-preview")
 		fmt.Println(requestURL)
 		res, err := http.Get(requestURL)
 		if err != nil {
