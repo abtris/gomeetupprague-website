@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="videos-container">
+  <div class="videos-header">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Content }}</p>
+  </div>
+
+  <div class="videos-content">
+    <p class="videos-info">
+      Videos from our Go Meetup Prague events. You can also
+      <a href="https://www.youtube.com/@gomeetupprague" target="_blank" rel="noopener noreferrer">
+        subscribe to our YouTube channel
+      </a>
+      for the latest content.
+    </p>
+
+    {{ $videos := .Site.Data.videos }}
+    {{ range $videos.years }}
+      <div class="meetup-group">
+        <h2>{{ .year }}</h2>
+        <div class="videos-grid">
+          {{ range .videos }}
+            <div class="video-card">
+              <div class="video-embed">
+                <iframe width="100%" height="315" src="{{ .url }}"
+                  title="{{ .title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <h3>{{ .title }}</h3>
+              <p class="video-speaker">{{ .published }}</p>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
