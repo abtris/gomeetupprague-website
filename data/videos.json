@@ -1,0 +1,233 @@
+{
+  "years": [
+    {
+      "year": 2025,
+      "videos": [
+        {
+          "title": "Mat\u00fa\u0161 Bafrnec (STRV) - Supply Chain Security",
+          "id": "QxZI0QOeObI",
+          "published": "2025-06-18",
+          "url": "https://www.youtube.com/embed/QxZI0QOeObI"
+        },
+        {
+          "title": "Vilibald Wanca (Pure Storage) - Generics Are Great Until They Aren\u2019t",
+          "id": "Y0buU3img_E",
+          "published": "2025-06-18",
+          "url": "https://www.youtube.com/embed/Y0buU3img_E"
+        },
+        {
+          "title": "Petr Brzek (Macaly) - How We Accidentally Built a Vibe Coding Tool",
+          "id": "h_nQT8XwvH0",
+          "published": "2025-06-18",
+          "url": "https://www.youtube.com/embed/h_nQT8XwvH0"
+        },
+        {
+          "title": "Noam Yehuda (Pure Storage) - Lets Go wild with New Go Tool Features in Go 1.24!",
+          "id": "c-5469UfLrg",
+          "published": "2025-03-19",
+          "url": "https://www.youtube.com/embed/c-5469UfLrg"
+        },
+        {
+          "title": "Vojtech Vitek (golang.cz) - Building scalable REST APIs with chi and webrpc",
+          "id": "SIUWhXgOIQE",
+          "published": "2025-03-19",
+          "url": "https://www.youtube.com/embed/SIUWhXgOIQE"
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "videos": [
+        {
+          "title": "Aliaksei Shainiuk (Pure Storage) Swiss Tables \u2013 Unlocking Map Performance",
+          "id": "jGXzzsMQH80",
+          "published": "2025-03-19",
+          "url": "https://www.youtube.com/embed/jGXzzsMQH80"
+        },
+        {
+          "title": "Mi\u0142osz Sm\u00f3\u0142ka - Killing the legacy and other CQRS stories",
+          "id": "GdLu7FQBrdk",
+          "published": "2024-12-10",
+          "url": "https://www.youtube.com/embed/GdLu7FQBrdk"
+        },
+        {
+          "title": "Robert Laszczak, Rethinking Domain-Driven Design in Go: From Myths to Reduced Project Complexity",
+          "id": "45hgBHp_QO0",
+          "published": "2024-12-10",
+          "url": "https://www.youtube.com/embed/45hgBHp_QO0"
+        },
+        {
+          "title": "Vilibald Wan\u010da (Pure Storage) - Cell-Based Architecture",
+          "id": "GVoGp5-hwfo",
+          "published": "2024-12-10",
+          "url": "https://www.youtube.com/embed/GVoGp5-hwfo"
+        },
+        {
+          "title": "Anna Khaitovich, Senior Software Engineer - Integrating ClickHouse database into your Go service",
+          "id": "AxUfcxB4tSU",
+          "published": "2024-10-23",
+          "url": "https://www.youtube.com/embed/AxUfcxB4tSU"
+        },
+        {
+          "title": "Piotr Szczepanski, Staff Software Engineer at SentinelOne - Advanced Testing Techniques in Go",
+          "id": "ekeKJI-D3fc",
+          "published": "2024-10-23",
+          "url": "https://www.youtube.com/embed/ekeKJI-D3fc"
+        },
+        {
+          "title": "Mat\u00fa\u0161 Bafrnec, Senior Software Engineer at STRV - Know your slices",
+          "id": "DJg6x5INxQ4",
+          "published": "2024-10-23",
+          "url": "https://www.youtube.com/embed/DJg6x5INxQ4"
+        },
+        {
+          "title": "Pavel \u0160mejkal, Outreach - Bootstrapping the Go application like a PRO",
+          "id": "VEv2gwJ1P5A",
+          "published": "2024-10-23",
+          "url": "https://www.youtube.com/embed/VEv2gwJ1P5A"
+        },
+        {
+          "title": "Ladislav Prskavec (Pure Storage) - Bubble Tea - how to make better terminal UI",
+          "id": "nuLZPGTvs0Y",
+          "published": "2024-06-29",
+          "url": "https://www.youtube.com/embed/nuLZPGTvs0Y"
+        },
+        {
+          "title": "Tobiasz Heller (Betsys) - Webauthn/Passkeys technology and support in Go.",
+          "id": "cEnwItTt9Ac",
+          "published": "2024-06-29",
+          "url": "https://www.youtube.com/embed/cEnwItTt9Ac"
+        },
+        {
+          "title": "Felix Geisend\u00f6rfer (Datadog) - How to Win Frames and Influence Pointers",
+          "id": "aZioivDyo-E",
+          "published": "2024-06-23",
+          "url": "https://www.youtube.com/embed/aZioivDyo-E"
+        },
+        {
+          "title": "Jan Wozniak (Kedify) - Refactoring Open Source Project: KEDA Scaler Parser",
+          "id": "CQtRUczzVw4",
+          "published": "2024-06-17",
+          "url": "https://www.youtube.com/embed/CQtRUczzVw4"
+        },
+        {
+          "title": "Tom\u00e1\u0161 Karela Proch\u00e1zka (Dataddo) - Implementing SSH Server in Go",
+          "id": "Ystvjw8xP1A",
+          "published": "2024-06-16",
+          "url": "https://www.youtube.com/embed/Ystvjw8xP1A"
+        },
+        {
+          "title": "Miroslav Koukal (Pure) - Go and SQLc",
+          "id": "abxJxXpJtUc",
+          "published": "2024-03-01",
+          "url": "https://www.youtube.com/embed/abxJxXpJtUc"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "videos": [
+        {
+          "title": "Jan Dubsky (Pure) - Mid-stack inlining. How to use it to make performance-critical APIs faster.",
+          "id": "gs0cz9u6aXY",
+          "published": "2024-03-01",
+          "url": "https://www.youtube.com/embed/gs0cz9u6aXY"
+        },
+        {
+          "title": "Ondrej Sery (EyeTowers) - Building a Go-based Surveillance SaaS",
+          "id": "DnZbvYQDCSE",
+          "published": "2023-09-27",
+          "url": "https://www.youtube.com/embed/DnZbvYQDCSE"
+        },
+        {
+          "title": "Dmytro Kasianenko - Discover the Power of Profiling",
+          "id": "iGbH7eDFgRc",
+          "published": "2023-09-27",
+          "url": "https://www.youtube.com/embed/iGbH7eDFgRc"
+        },
+        {
+          "title": "gRPC vs REST comparison - Jakub Wosyka",
+          "id": "wbRbCn4rOVo",
+          "published": "2023-09-19",
+          "url": "https://www.youtube.com/embed/wbRbCn4rOVo"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "videos": [
+        {
+          "title": "The Dark Side of gRPC - Daniel Milde",
+          "id": "d34NsTGgn2c",
+          "published": "2023-09-19",
+          "url": "https://www.youtube.com/embed/d34NsTGgn2c"
+        },
+        {
+          "title": "Kubebuilder: a framework for building Kubernetes APIs using Go - Martin Fryc",
+          "id": "wejDjra3R8E",
+          "published": "2022-12-13",
+          "url": "https://www.youtube.com/embed/wejDjra3R8E"
+        },
+        {
+          "title": "CI pipelines should be code, let&#39;s introduce Dagger Go SDK - Ladislav Prskavec",
+          "id": "QsIjuA3UBg4",
+          "published": "2022-12-13",
+          "url": "https://www.youtube.com/embed/QsIjuA3UBg4"
+        },
+        {
+          "title": "Managing Kubernetes manifests with Jsonnet - Daniel Milde",
+          "id": "IzKJsiHFJGM",
+          "published": "2022-12-13",
+          "url": "https://www.youtube.com/embed/IzKJsiHFJGM"
+        },
+        {
+          "title": "Generating code with go generate - Daniel Milde",
+          "id": "ClW_g1iDGi4",
+          "published": "2022-07-25",
+          "url": "https://www.youtube.com/embed/ClW_g1iDGi4"
+        },
+        {
+          "title": "Adding policies to your Golang Apps with Open Policy Agent - Wojciech Barczy\u0144ski",
+          "id": "n_4eQB340t4",
+          "published": "2022-07-25",
+          "url": "https://www.youtube.com/embed/n_4eQB340t4"
+        },
+        {
+          "title": "Low level Go - interfacing the OS - Vilibald Wan\u010da",
+          "id": "Aqtzzz-zW2Y",
+          "published": "2022-06-28",
+          "url": "https://www.youtube.com/embed/Aqtzzz-zW2Y"
+        },
+        {
+          "title": "Getting started with fuzzing - Ladislav Prskavec",
+          "id": "BF_RjhUzchE",
+          "published": "2022-06-28",
+          "url": "https://www.youtube.com/embed/BF_RjhUzchE"
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "videos": [
+        {
+          "title": "Meet Go Generics - Tom\u00e1\u0161 Proch\u00e1zka",
+          "id": "8jRfsI87SvI",
+          "published": "2022-06-28",
+          "url": "https://www.youtube.com/embed/8jRfsI87SvI"
+        },
+        {
+          "title": "Golang Prague Meetup #6 with Jon Calhoun - Learning Go",
+          "id": "Mh352-UNRQo",
+          "published": "2021-06-24",
+          "url": "https://www.youtube.com/embed/Mh352-UNRQo"
+        },
+        {
+          "title": "Golang Prague Meetup #5 with Bill Kennedy - Go Module Engineering Decisions",
+          "id": "m8lgcXv2lhI",
+          "published": "2021-03-26",
+          "url": "https://www.youtube.com/embed/m8lgcXv2lhI"
+        }
+      ]
+    }
+  ]
+}
