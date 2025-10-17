@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="videos-container">
+  <div class="videos-header">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Content }}</p>
+  </div>
+
+  <div class="videos-content">
+    <p class="videos-info">
+      Videos from our Go Meetup Prague events. You can also 
+      <a href="https://www.youtube.com/@gomeetupprague" target="_blank" rel="noopener noreferrer">
+        subscribe to our YouTube channel
+      </a>
+      for the latest content.
+    </p>
+
+    <!-- Meetup #1 -->
+    <div class="meetup-group">
+      <h2>Meetup #1</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-embed">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" 
+              title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div>
+          <h3>Video Title 1</h3>
+          <p class="video-speaker">Speaker Name</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meetup #2 -->
+    <div class="meetup-group">
+      <h2>Meetup #2</h2>
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-embed">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" 
+              title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div>
+          <h3>Video Title 2</h3>
+          <p class="video-speaker">Speaker Name</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more meetup groups as needed -->
+  </div>
+</div>
+{{ end }}
+
