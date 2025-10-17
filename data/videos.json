@@ -32,18 +32,18 @@
           "id": "SIUWhXgOIQE",
           "published": "2025-03-19",
           "url": "https://www.youtube.com/embed/SIUWhXgOIQE"
+        },
+        {
+          "title": "Aliaksei Shainiuk (Pure Storage) Swiss Tables \u2013 Unlocking Map Performance",
+          "id": "jGXzzsMQH80",
+          "published": "2025-03-19",
+          "url": "https://www.youtube.com/embed/jGXzzsMQH80"
         }
       ]
     },
     {
       "year": 2024,
       "videos": [
-        {
-          "title": "Aliaksei Shainiuk (Pure Storage) Swiss Tables \u2013 Unlocking Map Performance",
-          "id": "jGXzzsMQH80",
-          "published": "2025-03-19",
-          "url": "https://www.youtube.com/embed/jGXzzsMQH80"
-        },
         {
           "title": "Mi\u0142osz Sm\u00f3\u0142ka - Killing the legacy and other CQRS stories",
           "id": "GdLu7FQBrdk",
@@ -121,18 +121,18 @@
           "id": "abxJxXpJtUc",
           "published": "2024-03-01",
           "url": "https://www.youtube.com/embed/abxJxXpJtUc"
+        },
+        {
+          "title": "Jan Dubsky (Pure) - Mid-stack inlining. How to use it to make performance-critical APIs faster.",
+          "id": "gs0cz9u6aXY",
+          "published": "2024-03-01",
+          "url": "https://www.youtube.com/embed/gs0cz9u6aXY"
         }
       ]
     },
     {
       "year": 2023,
       "videos": [
-        {
-          "title": "Jan Dubsky (Pure) - Mid-stack inlining. How to use it to make performance-critical APIs faster.",
-          "id": "gs0cz9u6aXY",
-          "published": "2024-03-01",
-          "url": "https://www.youtube.com/embed/gs0cz9u6aXY"
-        },
         {
           "title": "Ondrej Sery (EyeTowers) - Building a Go-based Surveillance SaaS",
           "id": "DnZbvYQDCSE",
@@ -150,18 +150,18 @@
           "id": "wbRbCn4rOVo",
           "published": "2023-09-19",
           "url": "https://www.youtube.com/embed/wbRbCn4rOVo"
+        },
+        {
+          "title": "The Dark Side of gRPC - Daniel Milde",
+          "id": "d34NsTGgn2c",
+          "published": "2023-09-19",
+          "url": "https://www.youtube.com/embed/d34NsTGgn2c"
         }
       ]
     },
     {
       "year": 2022,
       "videos": [
-        {
-          "title": "The Dark Side of gRPC - Daniel Milde",
-          "id": "d34NsTGgn2c",
-          "published": "2023-09-19",
-          "url": "https://www.youtube.com/embed/d34NsTGgn2c"
-        },
         {
           "title": "Kubebuilder: a framework for building Kubernetes APIs using Go - Martin Fryc",
           "id": "wejDjra3R8E",
@@ -203,18 +203,18 @@
           "id": "BF_RjhUzchE",
           "published": "2022-06-28",
           "url": "https://www.youtube.com/embed/BF_RjhUzchE"
+        },
+        {
+          "title": "Meet Go Generics - Tom\u00e1\u0161 Proch\u00e1zka",
+          "id": "8jRfsI87SvI",
+          "published": "2022-06-28",
+          "url": "https://www.youtube.com/embed/8jRfsI87SvI"
         }
       ]
     },
     {
       "year": 2021,
       "videos": [
-        {
-          "title": "Meet Go Generics - Tom\u00e1\u0161 Proch\u00e1zka",
-          "id": "8jRfsI87SvI",
-          "published": "2022-06-28",
-          "url": "https://www.youtube.com/embed/8jRfsI87SvI"
-        },
         {
           "title": "Golang Prague Meetup #6 with Jon Calhoun - Learning Go",
           "id": "Mh352-UNRQo",

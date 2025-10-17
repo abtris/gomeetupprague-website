@@ -8,20 +8,19 @@ import re
 from pathlib import Path
 
 def parse_videos_md(md_content):
-    """Parse videos.md and return structured data."""
-    videos_by_year = {}
-    current_year = None
+    """Parse videos.md and return structured data, grouping by actual published year."""
+    videos = []
     current_video = None
-    
+
     for line in md_content.split('\n'):
         line = line.strip()
-        
+
         if line.startswith('## '):
-            current_year = line.replace('## ', '')
-            videos_by_year[current_year] = []
+            # Skip the year header, we'll use the actual published date instead
+            continue
         elif line.startswith('### '):
             if current_video:
-                videos_by_year[current_year].append(current_video)
+                videos.append(current_video)
             current_video = {
                 'title': line.replace('### ', ''),
                 'id': '',
@@ -37,10 +36,19 @@ def parse_videos_md(md_content):
         elif line.startswith('- **URL**: '):
             if current_video:
                 current_video['url'] = line.replace('- **URL**: ', '')
-    
+
     if current_video:
-        videos_by_year[current_year].append(current_video)
-    
+        videos.append(current_video)
+
+    # Group by actual published year
+    videos_by_year = {}
+    for video in videos:
+        if video['published']:
+            year = video['published'].split('-')[0]  # Extract year from YYYY-MM-DD
+            if year not in videos_by_year:
+                videos_by_year[year] = []
+            videos_by_year[year].append(video)
+
     return videos_by_year
 
 def main():
