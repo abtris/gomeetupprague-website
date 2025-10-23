@@ -1,0 +1,65 @@
+name: Update Videos from YouTube
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-videos:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Fetch videos from YouTube
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        run: |
+          # Run fetch script with environment variables
+          python3 scripts/fetch-videos.py
+          python3 scripts/convert-to-json.py
+
+          # Clean up markdown file
+          rm -f data/videos.md
+
+      - name: Check if videos changed
+        id: check_changes
+        run: |
+          if git diff --quiet data/videos.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: 'feat: update videos from YouTube channel'
+          title: 'feat: update videos from YouTube channel'
+          body: |
+            ## 📹 Videos Updated
+
+            This PR updates the videos from the Go Meetup Prague YouTube channel.
+
+            ### Changes
+            - Fetched latest videos from YouTube API
+            - Updated `data/videos.json` with new videos
+
+            Please review and merge if everything looks good.
+          branch: feature/update-videos-${{ github.run_number }}
+          delete-branch: true
+
+      - name: No changes found
+        if: steps.check_changes.outputs.changed == 'false'
+        run: |
+          echo "✅ No new videos found. Videos are up to date!"
+
