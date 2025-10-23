@@ -23,16 +23,12 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         run: |
-          # Create .env file with secrets
-          echo "GOOGLE_API_KEY=$GOOGLE_API_KEY" > .env
-          echo "CHANNEL_ID=$CHANNEL_ID" >> .env
-          
-          # Run fetch script
+          # Run fetch script with environment variables
           python3 scripts/fetch-videos.py
           python3 scripts/convert-to-json.py
-          
-          # Clean up
-          rm -f data/videos.md .env
+
+          # Clean up markdown file
+          rm -f data/videos.md
 
       - name: Check if videos changed
         id: check_changes
