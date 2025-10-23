@@ -2,15 +2,6 @@ name: Update Videos from YouTube
 
 on:
   workflow_dispatch:
-    inputs:
-      create_pr:
-        description: 'Create a Pull Request instead of committing to main'
-        required: false
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
 
 jobs:
   update-videos:
@@ -53,34 +44,25 @@ jobs:
           fi
 
       - name: Create Pull Request
-        if: steps.check_changes.outputs.changed == 'true' && github.event.inputs.create_pr == 'true'
+        if: steps.check_changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: 'feat: update videos from YouTube channel'
           title: 'feat: update videos from YouTube channel'
           body: |
             ## 📹 Videos Updated
-            
+
             This PR updates the videos from the Go Meetup Prague YouTube channel.
-            
+
             ### Changes
             - Fetched latest videos from YouTube API
             - Updated `data/videos.json` with new videos
-            
+
             Please review and merge if everything looks good.
           branch: feature/update-videos-${{ github.run_number }}
           delete-branch: true
 
-      - name: Commit and push to main
-        if: steps.check_changes.outputs.changed == 'true' && github.event.inputs.create_pr == 'false'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/videos.json
-          git commit -m "feat: update videos from YouTube channel"
-          git push origin main
-
-      - name: Comment if no changes
+      - name: No changes found
         if: steps.check_changes.outputs.changed == 'false'
         run: |
           echo "✅ No new videos found. Videos are up to date!"
