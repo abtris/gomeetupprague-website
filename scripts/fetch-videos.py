@@ -32,15 +32,20 @@ def load_env_file(env_path):
 env_file = Path(__file__).parent.parent / ".env"
 load_env_file(env_file)
 
+# Also try .env.prod if .env is empty
+if not os.getenv("GOOGLE_API_KEY"):
+    env_prod_file = Path(__file__).parent.parent / ".env.prod"
+    load_env_file(env_prod_file)
+
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 if not GOOGLE_API_KEY:
-    print("Error: GOOGLE_API_KEY not set in .env file")
+    print("Error: GOOGLE_API_KEY not set in .env or .env.prod file")
     sys.exit(1)
 
 if not CHANNEL_ID:
-    print("Error: CHANNEL_ID not set in .env file")
+    print("Error: CHANNEL_ID not set in .env or .env.prod file")
     sys.exit(1)
 
 

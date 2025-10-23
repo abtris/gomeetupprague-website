@@ -4,6 +4,24 @@
       "year": 2025,
       "videos": [
         {
+          "title": "Mila Nguyen (STRV) - Monitoring Go Services in AWS",
+          "id": "o1P1ucsgwxQ",
+          "published": "2025-10-21",
+          "url": "https://www.youtube.com/embed/o1P1ucsgwxQ"
+        },
+        {
+          "title": "Zdenek Brabec (Pure Storage) - What is new in Go 1.25",
+          "id": "XsQB4e0cgc4",
+          "published": "2025-10-21",
+          "url": "https://www.youtube.com/embed/XsQB4e0cgc4"
+        },
+        {
+          "title": "Vilibald Wanca  (Pure Storage) - Nail the Basics - S01E01",
+          "id": "dRu1p7ZJ1mA",
+          "published": "2025-10-21",
+          "url": "https://www.youtube.com/embed/dRu1p7ZJ1mA"
+        },
+        {
           "title": "Mat\u00fa\u0161 Bafrnec (STRV) - Supply Chain Security",
           "id": "QxZI0QOeObI",
           "published": "2025-06-18",
