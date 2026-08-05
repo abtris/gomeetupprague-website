@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="/" aria-label="Go Meetup Prague home">
+      <span class="brand-mark" aria-hidden="true">Go</span>
+      <span class="brand-name">Meetup <strong>Prague</strong></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/"{{ if .IsHome }} aria-current="page"{{ end }}>Home</a>
+      <a href="/videos/"{{ if eq .Section "videos" }} aria-current="page"{{ end }}>Videos</a>
+      <a class="nav-cta" href="https://www.meetup.com/prague-golang-meetup/">Join the community <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
