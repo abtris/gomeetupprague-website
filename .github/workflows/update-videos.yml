@@ -3,45 +3,50 @@ name: Update Videos from YouTube
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-videos:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Set up Python
-        uses: actions/setup-python@v7
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          python-version: '3.14'
+          go-version-file: scripts/go.mod
+          cache-dependency-path: scripts/go.mod
+
+      - name: Test video fetcher
+        working-directory: scripts
+        run: go test ./...
 
       - name: Fetch videos from YouTube
+        working-directory: scripts
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        run: |
-          # Run fetch script with environment variables
-          python3 scripts/fetch-videos.py
-          python3 scripts/convert-to-json.py
-
-          # Clean up markdown file
-          rm -f data/videos.md
+        run: go run .
 
       - name: Check if videos changed
         id: check_changes
         run: |
           if git diff --quiet data/videos.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create Pull Request
         if: steps.check_changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           commit-message: 'feat: update videos from YouTube channel'
           title: 'feat: update videos from YouTube channel'
@@ -60,6 +65,4 @@ jobs:
 
       - name: No changes found
         if: steps.check_changes.outputs.changed == 'false'
-        run: |
-          echo "✅ No new videos found. Videos are up to date!"
-
+        run: echo "✅ No new videos found. Videos are up to date!"
