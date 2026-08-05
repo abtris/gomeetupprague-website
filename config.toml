@@ -1,4 +1,4 @@
-baseURL = 'http://hugo-quickstart-template.netlify.com'
-languageCode = 'en-us'
+baseURL = 'https://www.gomeetupprague.cz/'
+locale = 'en-US'
 title = 'Go Meetup Prague'
 theme = 'netlify-basic'
