@@ -2,3 +2,11 @@ baseURL = 'https://www.gomeetupprague.cz/'
 locale = 'en-US'
 title = 'Go Meetup Prague'
 theme = 'netlify-basic'
+
+# Shown in the homepage meetup banner. Leave blank to hide a value.
+[params.nextMeetup]
+url = 'https://www.meetup.com/prague-golang-meetup/events/315974056/'
+endsAt = '2026-09-23T21:00:00+02:00'
+date = 'Sep 23'
+time = '6:00 PM'
+place = 'Sky Czechia Afi Karlin'

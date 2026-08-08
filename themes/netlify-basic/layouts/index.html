@@ -1,4 +1,22 @@
 {{ define "main" }}
+{{ $nextMeetupURL := .Site.Params.nextMeetup.url | default "https://www.meetup.com/prague-golang-meetup/" }}
+<a
+  id="next-meetup"
+  class="meetup-alert"
+  href="{{ $nextMeetupURL }}"
+  data-ends-at="{{ .Site.Params.nextMeetup.endsAt }}"
+>
+  <span class="shell meetup-alert-inner">
+    <span class="meetup-alert-status"><i aria-hidden="true"></i> Next meetup</span>
+    <strong class="meetup-alert-details">The next Prague Go meetup is coming{{ with .Site.Params.nextMeetup.date }} on {{ . }}{{ end }}{{ with .Site.Params.nextMeetup.time }} at {{ . }}{{ end }}{{ with .Site.Params.nextMeetup.place }} at {{ . }}{{ end }}.</strong>
+    <span class="meetup-alert-action">View details &amp; RSVP <span aria-hidden="true">↗</span></span>
+  </span>
+</a>
+<script>
+  const meetupAlert = document.getElementById('next-meetup');
+  meetupAlert.hidden = Date.now() >= Date.parse(meetupAlert.dataset.endsAt);
+</script>
+
 <section class="hero">
   <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
   <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
@@ -14,7 +32,7 @@
       </p>
       <div class="hero-actions">
         <a
-          href="https://www.meetup.com/prague-golang-meetup/"
+          href="{{ $nextMeetupURL }}"
           class="button button-primary"
           >Join the next meetup <span aria-hidden="true">↗</span></a
         >
