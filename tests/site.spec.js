@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 
 const externalDestinations = {
   meetup: 'https://www.meetup.com/prague-golang-meetup/',
+  meetupEvent: 'https://www.meetup.com/prague-golang-meetup/events/315974056/',
   slack: 'https://invite.slack.golangbridge.org/',
   mastodon: 'https://fosstodon.org/@gomeetupprague',
   youtube: 'https://www.youtube.com/@gomeetupprague',
@@ -22,9 +23,17 @@ test('homepage exposes every primary community action', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Build better software.',
   )
+  await expect(page.locator('.meetup-alert')).toHaveAttribute(
+    'href',
+    externalDestinations.meetupEvent,
+  )
+  await expect(page.locator('.meetup-alert-details')).toBeVisible()
+  await expect(page.locator('.meetup-alert-details')).toContainText(
+    'The next Prague Go meetup is coming on Sep 23 at 6:00 PM at Sky Czechia Afi Karlin.',
+  )
   await expect(page.getByRole('link', { name: /join the next meetup/i })).toHaveAttribute(
     'href',
-    externalDestinations.meetup,
+    externalDestinations.meetupEvent,
   )
   await expect(page.getByRole('link', { name: /meet us in/i })).toHaveAttribute(
     'href',
@@ -45,6 +54,13 @@ test('homepage exposes every primary community action', async ({ page }) => {
     'href',
     externalDestinations.anniversary,
   )
+})
+
+test('past meetup banner is hidden', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-09-23T19:00:01Z'))
+  await page.goto('/')
+
+  await expect(page.locator('.meetup-alert')).toBeHidden()
 })
 
 test('navigation opens the complete video archive', async ({ page }) => {
