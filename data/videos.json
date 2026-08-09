@@ -1,6 +1,35 @@
 {
   "years": [
     {
+      "year": 2026,
+      "videos": [
+        {
+          "title": "Marek Svitok (Sky) - Elegance and Safety in Goroutine Management",
+          "id": "RwLlsF8rV_A",
+          "published": "2026-08-09",
+          "url": "https://www.youtube.com/embed/RwLlsF8rV_A"
+        },
+        {
+          "title": "Vilibald Wanca - Nail the Basics - S01E02",
+          "id": "eDUs2l4yfBU",
+          "published": "2026-08-09",
+          "url": "https://www.youtube.com/embed/eDUs2l4yfBU"
+        },
+        {
+          "title": "Daniel Turecek (Pure Storage) - What is new in Go 1.26",
+          "id": "kXIAwVgB0u0",
+          "published": "2026-08-09",
+          "url": "https://www.youtube.com/embed/kXIAwVgB0u0"
+        },
+        {
+          "title": "Radek Py\u0161n\u00fd (Oddin.gg) - Testing and iterators",
+          "id": "EAr-Rv_65n8",
+          "published": "2026-08-09",
+          "url": "https://www.youtube.com/embed/EAr-Rv_65n8"
+        }
+      ]
+    },
+    {
       "year": 2025,
       "videos": [
         {

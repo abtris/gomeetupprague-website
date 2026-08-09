@@ -71,11 +71,11 @@ test('navigation opens the complete video archive', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1, name: 'Videos' })).toBeVisible()
 
   const cards = page.locator('.video-card')
-  await expect(cards).toHaveCount(37)
+  await expect(cards).toHaveCount(41)
   await expect(cards.first().getByRole('heading', { level: 3 })).not.toBeEmpty()
 
   const embeds = page.locator('.video-embed iframe')
-  await expect(embeds).toHaveCount(37)
+  await expect(embeds).toHaveCount(41)
   expect(await embeds.evaluateAll((frames) => frames.every((frame) => frame.loading === 'lazy'))).toBe(
     true,
   )
