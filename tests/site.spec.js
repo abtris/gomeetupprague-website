@@ -16,6 +16,8 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('homepage exposes every primary community action', async ({ page }) => {
+  // The banner hides itself after nextMeetup.endsAt, so pin the clock before it.
+  await page.clock.setFixedTime(new Date('2026-09-01T12:00:00Z'))
   const response = await page.goto('/')
 
   expect(response?.ok()).toBeTruthy()
