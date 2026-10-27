@@ -41,6 +41,25 @@ The homepage banner reads `[params.nextMeetup]` from `config.toml`:
 
 Update all five values when publishing a new meetup.
 
+### Announce a new meetup
+
+Given a Meetup event URL, this is the whole task. Do not add banner markup, images, or new params; the existing banner already renders from these settings.
+
+1. Read the event details from the page's JSON-LD and Open Graph tags (the page needs a browser-like user agent):
+
+   ```sh
+   curl -sL -A "Mozilla/5.0" <event-url> | grep -o -E '"(startDate|endDate)":"[^"]*"|"location":\{[^}]*\}'
+   ```
+
+2. Edit `config.toml`:
+   - `url`: the event URL with a trailing slash.
+   - `date`: `Mon D`, for example `Nov 19`.
+   - `time`: start time as `6:00 PM`.
+   - `place`: short venue name, for example `Everpure Karlin`.
+   - `endsAt`: expected end, usually 21:00 local time, with the UTC offset in force on that date: `+01:00` from late October to late March, `+02:00` otherwise.
+3. Check the rendered text: `hugo --destination <tmp-dir> && rg -o "coming on[^<]*" <tmp-dir>/index.html`.
+4. Commit as `chore(banner): announce Go Meetup #<n> on <D Mon> at <venue>` and open the PR.
+
 ## Validation
 
 Run the smallest relevant checks before pushing:
